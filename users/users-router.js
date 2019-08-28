@@ -10,10 +10,10 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", restricted, (req, res) => {
-  console.log(req.params.id);
+  // console.log(req.params.id);
   Users.findUser(req.params.id)
     .then(userObj => {
-      console.log(userObj);
+      // console.log(userObj);
       res.status(200).json(userObj);
     })
     .catch(err => {
@@ -24,6 +24,8 @@ router.get("/:id", restricted, (req, res) => {
 router.put("/:id", restricted, async (req, res) => {
   const { id } = req.params;
   const changes = req.body;
+  console.log(req.params.id);
+  console.log(req.body);
   if (req.body.password || req.body.id) {
     res
       .status(500)

@@ -10,7 +10,8 @@ exports.seed = function(knex) {
           name: "Dave",
           email: "email@email.com",
           password: "password",
-          per_day: 0,
+          daily_goal: 0,
+          daily_progress: 0,
           streak_days: 0
         }
       ]);

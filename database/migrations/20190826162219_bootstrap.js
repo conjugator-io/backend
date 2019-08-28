@@ -8,7 +8,8 @@ exports.up = function(knex) {
         .notNullable()
         .unique();
       users.string("password", 255).notNullable();
-      users.integer("per_day").defaultTo(0);
+      users.integer("daily_goal").defaultTo(0);
+      users.integer("daily_progress").defaultTo(0);
       users.integer("streak_days").defaultTo(0);
     })
     .createTable("verbs", verbs => {
