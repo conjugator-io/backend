@@ -24,12 +24,12 @@ router.post("/register", (req, res) => {
     user.password = hash; // reset password as hashed password
 
     Users.addUser(user)
-      .then(newUser => {
-        res.status(201).json(newUser);
+      .then(saved => {
+        res.status(201).json(saved);
       })
       .catch(err => {
         res.status(500).json({
-          message: "There was an error while trying to add that user."
+          message: "There was an error adding that user."
         });
       });
   } else {
