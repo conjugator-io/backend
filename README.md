@@ -68,11 +68,12 @@ _Get Back:_
 
 ```
 {
-	"id": 2,
-	"name": "testing",
-	"email": "testing@email.com",
-	"per_day": 3,
-	"streak_days": 0
+  "id": 2,
+  "name": "Dave",
+  "email": "email@email.com",
+  "daily_goal": 0,
+  "daily_progress": 0,
+  "streak_days": 0
 }
 ```
 
@@ -90,12 +91,12 @@ _Send token in request header using "Athorization" property._
 ```
 
 _Send updates in request body:_
-_These properties may be updated: **name, email, per_day, streak_days**._
+_These properties may be updated: **name, email, daily_goal, daily_progress, streak_days**._
 
 ```
 {
-	"per_day": 5,
-	"streak_days": 1,
+	"daily_goal": 5,
+	"streak_days": 1
 }
 ```
 
@@ -106,7 +107,8 @@ _Get Back the updated user:_
 	"id": 2,
 	"name": "testing",
 	"email": "testing@email.com",
-	"per_day": 5,
+	"daily_goal": 5,
+	"daily_progress": 0,
 	"streak_days": 1
 }
 ```
