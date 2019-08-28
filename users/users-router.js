@@ -24,8 +24,6 @@ router.get("/:id", restricted, (req, res) => {
 router.put("/:id", restricted, async (req, res) => {
   const { id } = req.params;
   const changes = req.body;
-  console.log(req.params.id);
-  console.log(req.body);
   if (req.body.password || req.body.id) {
     res
       .status(500)
