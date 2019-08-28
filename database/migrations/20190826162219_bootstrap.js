@@ -14,11 +14,11 @@ exports.up = function(knex) {
     })
     .createTable("verbs", verbs => {
       verbs.increments();
-      verbs.string("verb", 255).notNullable();
-      verbs.string("conjugation", 255).notNullable();
-      verbs.string("tense", 255).notNullable();
-      verbs.string("form", 255).notNullable();
-      verbs.string("sentence", 2500).notNullable();
+      verbs.text("verb").notNullable();
+      verbs.text("conjugation").notNullable();
+      verbs.text("tense").notNullable();
+      verbs.text("form").notNullable();
+      verbs.text("sentence").notNullable();
     });
 };
 
