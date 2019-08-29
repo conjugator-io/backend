@@ -10,10 +10,10 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", restricted, (req, res) => {
-  console.log(req.params.id);
+  // console.log(req.params.id);
   Users.findUser(req.params.id)
     .then(userObj => {
-      console.log(userObj);
+      // console.log(userObj);
       res.status(200).json(userObj);
     })
     .catch(err => {

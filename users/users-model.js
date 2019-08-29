@@ -23,7 +23,14 @@ function addUser(user) {
 function findUser(id) {
   return db("users")
     .where({ id })
-    .select("id", "name", "email", "per_day", "streak_days")
+    .select(
+      "id",
+      "name",
+      "email",
+      "daily_goal",
+      "daily_progress",
+      "streak_days"
+    )
     .first();
 }
 
@@ -32,14 +39,28 @@ function findBy(filter) {
 }
 
 function findAll() {
-  return db("users").select("id", "name", "email", "per_day", "streak_days");
+  return db("users").select(
+    "id",
+    "name",
+    "email",
+    "daily_goal",
+    "daily_progress",
+    "streak_days"
+  );
 }
 
 async function update(changes, id) {
   await db("users")
     .where({ id })
     .update(changes)
-    .select("id", "name", "email", "per_day", "streak_days");
+    .select(
+      "id",
+      "name",
+      "email",
+      "daily_goal",
+      "daily_progress",
+      "streak_days"
+    );
   return findUser(id);
 }
 
